@@ -1,0 +1,27 @@
+.currentSelection {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    color: #fff;
+    background-color: #009fe3;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

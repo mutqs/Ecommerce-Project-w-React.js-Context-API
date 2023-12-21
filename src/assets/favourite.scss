@@ -1,0 +1,47 @@
+.favouriteProductsWrapper {
+  > .title {
+    font-size: 24px;
+    font-weight: 400;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .favouriteProductsInnerWrapper {
+    display: flex;
+    flex-direction: column;
+    .favouriteProduct {
+      display: flex;
+      align-items: center;
+      .index {
+        font-weight: 700;
+      }
+      .productCardImage {
+        flex: 0 0 150px;
+        border: none;
+      }
+      .productCardBottom {
+        display: flex;
+        align-items: center;
+        .title {
+          border: none;
+          height: unset;
+        }
+        .button {
+          cursor: pointer;
+          width: 150px;
+          margin-right: 20px;
+        }
+        .deleteFromFavourite {
+          display: flex;
+          width: 20px;
+          height: 20px;
+          transition: 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+}

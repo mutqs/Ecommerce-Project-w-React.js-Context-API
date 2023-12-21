@@ -1,0 +1,316 @@
+.headerWrapper {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.28);
+  margin-bottom: 115px;
+  z-index: 5;
+  .headerTop {
+    height: 100px;
+    width: 100%;
+    .headerLeftWrapper {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      height: 100%;
+      .headerInfo {
+        color: #333;
+        margin-bottom: 0;
+        margin-left: 15px;
+      }
+    }
+    .searchArea {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      form {
+        position: relative;
+        display: flex;
+        width: 100%;
+        input {
+          width: 100%;
+          border-radius: 5px;
+          padding: 0 10px;
+          height: 34px;
+          border: 1px solid #333;
+          padding-right: 101px;
+          outline: unset;
+          box-shadow: 0 0 10px rgb(0 0 0 / 28%);
+        }
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100px;
+          height: 100%;
+          border-radius: 5px;
+          background-color: transparent;
+          color: #333;
+          border: 1px solid #333;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            background-color: #dddddd;
+          }
+        }
+      }
+    }
+    .rightAreaWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      > div {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        transition: 0.2s ease-in-out;
+        margin-right: 30px;
+        &.favouritesArea {
+          cursor: pointer;
+          &:hover {
+            opacity: 0.7;
+          }
+          .favouriteCount {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: -8px;
+            top: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #000;
+            color: #000;
+            font-size: 13px;
+            margin: 0;
+          }
+        }
+        &.cartArea {
+          margin-right: 0;
+          .cartCount {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: -8px;
+            top: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 1px solid #000;
+            color: #000;
+            font-size: 13px;
+            z-index: 3;
+            margin: 0;
+          }
+          .cartIcon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin-right: 0;
+            z-index: 2;
+            border: 1px solid transparent;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          .productsInCart {
+            position: absolute;
+            top: 120%;
+            right: 0;
+            width: 380px;
+            padding: 20px 15px 25px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.28);
+            .productsInCartTop {
+              display: flex;
+              align-items: center;
+              margin-bottom: 15px;
+              padding-right: 25px;
+              div {
+                text-align: center;
+                padding-bottom: 3px;
+                border-bottom: 1px solid #333;
+                margin-right: 15px;
+              }
+              .title {
+                flex: 0 0 115px;
+              }
+              .quantity {
+                flex: 0 0 65px;
+              }
+              .total {
+                flex: 0 0 100px;
+              }
+            }
+            .productInCart {
+              display: flex;
+              align-items: center;
+              margin-bottom: 15px;
+              width: 100%;
+              &:only-child,
+              &:last-child {
+                margin-bottom: 0;
+              }
+              .name {
+                max-width: 150px;
+                flex: 0 0 115px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin-right: 15px;
+                transition: 0.2s ease-in-out;
+                cursor: pointer;
+                &:hover {
+                  color: #009fe3;
+                }
+              }
+              .productRightInCart {
+                display: flex;
+                align-items: center;
+                flex: 1;
+                span {
+                  margin-right: 15px;
+                  &.count {
+                    display: flex;
+                    justify-content: center;
+                    flex: 0 0 65px;
+                  }
+                }
+                div {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 15px;
+                  height: 15px;
+                  svg {
+                    transition: 0.2s ease-in-out;
+                    cursor: pointer;
+                    &:hover {
+                      opacity: 0.5;
+                    }
+                  }
+                }
+                .totalPrice {
+                  flex: 0 0 100px;
+                  margin-right: 15px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .headerBrandWrapper {
+        position: relative;
+        width: unset;
+        span {
+          transition: 0.2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            color: #009fe3;
+          }
+        }
+        .menuItemBar {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          max-height: 350px;
+          width: 200px;
+          overflow-y: auto;
+          background-color: #fff;
+          padding: 15px 10px 20px;
+          border: 1px solid #333;
+          border-radius: 5px;
+          .menuItem {
+            margin-bottom: 15px;
+            cursor: pointer;
+            &:hover {
+              color: #009fe3;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.headerMiddle {
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  border: 1px solid #3333332b;
+  border-right: none;
+  border-left: none;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.28);
+  z-index: 2;
+  .menuItemBar {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    > span {
+      font-weight: 600;
+    }
+    .menuItem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      height: 48px;
+      white-space: nowrap;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        color: #009fe3;
+      }
+    }
+  }
+}
+.headerBottom {
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.28);
+  background-color: #fff;
+  .menuItemBar {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    > span {
+      font-weight: 600;
+    }
+    .menuItem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      height: 48px;
+      white-space: nowrap;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        color: #009fe3;
+      }
+    }
+  }
+}

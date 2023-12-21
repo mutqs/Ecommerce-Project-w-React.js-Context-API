@@ -1,0 +1,72 @@
+.footerWrapper {
+  background-color: #007fb6;
+  padding: 45px 0;
+  margin-top: 60px;
+  .footerLeftWrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    .footerInfo {
+      color: #fff;
+      margin-bottom: 0;
+      margin-left: 15px;
+    }
+  }
+  .featuredCategoriesWrapper,
+  .featuredBrandsWrapper {
+    color: #fff;
+    .title {
+      display: inline-block;
+      font-size: 20px;
+      border-bottom: 1px solid #fff;
+      padding-bottom: 3px;
+      margin-bottom: 15px;
+    }
+    .menuItem {
+      margin-bottom: 15px;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  .searchArea {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    form {
+      position: relative;
+      display: flex;
+      width: 100%;
+      input {
+        width: 100%;
+        border-radius: 5px;
+        padding: 0 10px;
+        height: 34px;
+        border: 1px solid #333;
+        padding-right: 61px;
+        outline: unset;
+        box-shadow: 0 0 10px rgb(0 0 0 / 28%);
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 100%;
+        border-radius: 5px;
+        background-color: transparent;
+        color: #333;
+        border: 1px solid #333;
+        transition: 0.2s ease-in-out;
+        &:hover {
+          background-color: #dddddd;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
-const Paginate = ({ gamesPerPage, totalGames, paginate }) => {
+const Paginate = ({ productsPerPage, totalProducts, paginate }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [activeIndex, setActiveIndex] = useState(1);
@@ -33,24 +33,22 @@ const Paginate = ({ gamesPerPage, totalGames, paginate }) => {
   const getPage = () => {
     let tempData = location?.search.split("p")[1];
     let pageIndex = tempData?.split("=")[1];
-    // console.log("pageIndex", pageIndex);
     if (!pageIndex) {
       paginate(1);
       return setActiveIndex(1);
     }
     paginate(pageIndex);
     return setActiveIndex(pageIndex);
-    // setActivePage(pageIndex);
   };
 
   const pageNumbers = [];
-  for (let i = 1; i <= Math.ceil(totalGames / gamesPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
     pageNumbers.push(i);
   }
 
-  useEffect(() => {
-    console.log("location", location);
-  }, [location]);
+  // useEffect(() => {
+  //   console.log("location", location);
+  // }, [location]);
 
   useEffect(() => {
     getPage();
@@ -76,7 +74,6 @@ const Paginate = ({ gamesPerPage, totalGames, paginate }) => {
                 </div>
               </li>
             ))}
-            {/* {console.log(gamesPerPage)} */}
           </ul>
         </nav>
       </div>

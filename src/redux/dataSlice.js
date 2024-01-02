@@ -162,8 +162,6 @@ export const dataSlice = createSlice({
       let isInclude = state.favouriteProducts.some((product) => {
         return product.id === action.payload.id;
       });
-      // console.log("isInclude", isInclude);
-      console.log("action.payload.id", action.payload.id);
       if (isInclude) {
         state.favouriteProducts = [
           ...state.favouriteProducts.filter(

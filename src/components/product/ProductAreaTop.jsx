@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FavouriteButton from "../common/FavouriteButton";
 import { addProductToCart } from "../../redux/cartSlice";
+import { useLocation } from "react-router-dom";
 
 const ProductAreaTop = () => {
   const { currentProduct } = useSelector((state) => state.data);
   const dispatch = useDispatch();
+  const location = useLocation();
   const [discountedPrice, setDiscountedPrice] = useState();
 
   const [cartCount, setCartCount] = useState(1);
@@ -23,8 +25,6 @@ const ProductAreaTop = () => {
     let tempProduct = { ...currentProduct, count: 0 };
     dispatch(addProductToCart({ tempProduct, cartCount }));
     setCartCount(1);
-    console.log("asda");
-    // console.log("cart", cart);
   };
 
   const count = (value) => {
@@ -34,8 +34,11 @@ const ProductAreaTop = () => {
   useEffect(() => {
     calcPrice();
     setCartCount(1);
-    // console.log("currentProduct", currentProduct);
   }, [currentProduct]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [location]);
 
   return (
     <>

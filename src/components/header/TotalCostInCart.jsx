@@ -5,7 +5,6 @@ const TotalCostInCart = ({ product }) => {
   const [total, setTotal] = useState(1);
 
   const calcEachProductTotal = () => {
-    console.log("product", product);
     if (product?.discountPercent) {
       let discountPrice = product?.price * (product?.discountPercent / 100);
       let newPrice = product?.price - discountPrice;

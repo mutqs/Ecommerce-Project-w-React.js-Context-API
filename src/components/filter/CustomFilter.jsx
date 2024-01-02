@@ -1,28 +1,22 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CustomFilter = () => {
   const { categories, brands } = useSelector((state) => state.data);
   const navigate = useNavigate();
-  const location = useLocation();
-
-  // const [baseUrl, setBaseUrl] = useState("/products?");
   const [inputValue, setInputValue] = useState("");
   const [categoryId, setCategoryId] = useState("");
   const [brandId, setBrandId] = useState("");
 
   const setProductName = (value) => {
     setInputValue(value);
-    // console.log("inputValue", inputValue);
   };
   const setCategoryType = (value) => {
     setCategoryId(value);
-    // console.log("categoryId", categoryId);
   };
   const setBrandType = (value) => {
     setBrandId(value);
-    // console.log("brandId", brandId);
   };
 
   let baseUrl = `/products?`;
@@ -78,7 +72,7 @@ const CustomFilter = () => {
             value={categoryId}
           >
             <option value="default">Choose One..</option>
-            {categories.map((categoryOption) => (
+            {categories?.map((categoryOption) => (
               <option value={categoryOption.id} key={categoryOption.id}>
                 {categoryOption.name}
               </option>

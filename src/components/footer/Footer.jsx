@@ -47,7 +47,7 @@ const Footer = () => {
                 <div className="featuredCategoriesWrapper">
                   <span className="title">Featured Categories</span>
                   {categories.length > 0 &&
-                    categories.map(
+                    categories?.map(
                       (menuItem, index) =>
                         index < 8 && (
                           <MenuItem

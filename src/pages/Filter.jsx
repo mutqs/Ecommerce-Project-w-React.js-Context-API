@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFilteredProducts, BASE_URL } from "../redux/dataSlice";
 import ProductCard from "../components/common/ProductCard";
-import "../assets/product-card.scss";
 import Select from "../components/filter/Select";
 import FilterArea from "../components/filter/FilterArea";
 import Paginate from "../components/filter/Paginate";
@@ -23,13 +22,13 @@ const Filter = () => {
 
   //Paginate
   const [currentPage, setCurrentPage] = useState(1);
-  const [gamesPerPage] = useState(12);
+  const [productsPerPage] = useState(12);
 
-  const indexOfLastGames = currentPage * gamesPerPage;
-  const indexOfFirstGames = indexOfLastGames - gamesPerPage;
-  const currentGames = filteredProducts.slice(
-    indexOfFirstGames,
-    indexOfLastGames
+  const indexOfLastProducts = currentPage * productsPerPage;
+  const indexOfFirstProducts = indexOfLastProducts - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProducts,
+    indexOfLastProducts
   );
 
   const paginate = (pageNumber) => {
@@ -72,9 +71,12 @@ const Filter = () => {
     setPath();
     declareSelections();
     dispatch(fetchFilteredProducts(baseUrl));
-    console.log("baseUrl", baseUrl);
-    console.log("location", location);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [location, query]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     <div className="filterAreaWrapper">
@@ -105,7 +107,7 @@ const Filter = () => {
               </div>
               <div className="productAreaWrapper row">
                 {filteredProducts.length > 0
-                  ? currentGames.map((product) => (
+                  ? currentProducts.map((product) => (
                       <ProductCard
                         product={product}
                         size={4}
@@ -115,8 +117,8 @@ const Filter = () => {
                   : "No Products Found.."}
                 {filteredProducts.length > 12 && (
                   <Paginate
-                    gamesPerPage={gamesPerPage}
-                    totalGames={filteredProducts.length}
+                    productsPerPage={productsPerPage}
+                    totalProducts={filteredProducts.length}
                     paginate={paginate}
                   />
                 )}

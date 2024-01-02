@@ -28,14 +28,6 @@ export const cartSlice = createSlice({
       state.cart.push(action.payload.tempProduct);
     },
     deleteProductFromCart: (state, action) => {
-      //   state.cart.forEach(function (x) {
-      //     if (x.id == action.payload.product.id) {
-      //       action.payload.product.unitsInStock = action.payload.product.unitsInStock + x.count;
-      //       x.count = 0;
-      //     }
-      //   });
-      console.log("action.payload", action.payload);
-      console.log(state.cart);
       state.cart = state.cart.filter((x) => x.id != action.payload.id);
     },
   },

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProductToFavourites } from "../../redux/dataSlice";
 
 const FavouriteProduct = ({ product, index }) => {
-  const { favPro } = useSelector((state) => state.data);
+  // const { favPro } = useSelector((state) => state.data);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -14,9 +14,9 @@ const FavouriteProduct = ({ product, index }) => {
     navigate(`/products/${id}`, { replace: true });
   };
 
-  useEffect(() => {
-    console.log("location.pathname", location.pathname);
-  }, [favPro.length]);
+  // useEffect(() => {
+  //   console.log("location.pathname", location.pathname);
+  // }, [favPro.length]);
 
   const addProduct = () => {
     dispatch(addProductToFavourites(product));

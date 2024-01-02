@@ -28,7 +28,7 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const onChange = (value) => {
+  const onChangeForKeyword = (value) => {
     setKeyword(value);
   };
 
@@ -58,18 +58,14 @@ const Header = () => {
     dispatch(fetchCategories());
     fillKeyword();
     setIsOpen(false);
-    // console.log("location", location);
   }, [location]);
 
   useEffect(() => {
     setIsOpen(false);
-    // console.log("isOpen", isOpen);
   }, []);
 
   const routeSearching = (e) => {
-    console.log("keyword", keyword);
     navigate(`/products?&q=${keyword}`);
-    // getProductsByName();
     setKeyword("");
     e.preventDefault();
   };
@@ -100,7 +96,7 @@ const Header = () => {
                       type="text"
                       placeholder="Search a product.."
                       value={keyword}
-                      onChange={(e) => onChange(e.target.value)}
+                      onChange={(e) => onChangeForKeyword(e.target.value)}
                     />
                     <button>Search</button>
                   </form>
@@ -156,8 +152,12 @@ const Header = () => {
               <div className="menuItemBar">
                 <span>Categories:</span>
                 {categories.length > 0 &&
-                  categories.map((menuItem) => (
-                    <MenuItem menuItem={menuItem} key={menuItem.id} />
+                  categories?.map((menuItem) => (
+                    <MenuItem
+                      menuItem={menuItem}
+                      type={"category"}
+                      key={menuItem.id}
+                    />
                   ))}
               </div>
             </div>

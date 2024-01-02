@@ -14,16 +14,12 @@ const FavouriteButton = ({ currentProduct }) => {
       return product?.id === currentProduct?.id;
     });
     setIsFavourite(isInclude);
-    // console.log("isInclude", isInclude);
   };
 
   const addProduct = () => {
     dispatch(addProductToFavourites(currentProduct));
-    // dispatch(isAlreadyInsideForFavourite(currentProduct));
   };
   useEffect(() => {
-    // console.log("favouriteProducts", favouriteProducts);
-    // console.log("isProductAlreadyFavourite", isProductAlreadyFavourite);
     checkFavourite();
   }, [favouriteProducts, currentProduct]);
 

@@ -3,6 +3,9 @@
     padding-top: 15px;
     .mainSlider {
       height: 444px;
+      .sliderItem {
+        cursor: pointer;
+      }
       .awssld {
         height: 100%;
         .awssld__bullets {

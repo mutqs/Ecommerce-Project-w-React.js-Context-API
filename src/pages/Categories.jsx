@@ -8,8 +8,8 @@ const Categories = () => {
   const { categories } = useSelector((state) => state.data);
 
   useEffect(() => {
-    console.log("categories", categories);
-  }, [categories]);
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     <div className="container">

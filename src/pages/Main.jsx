@@ -13,8 +13,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Brand from "../components/common/Brand";
 import Category from "../components/common/Category";
-import "../assets/product-card.scss";
-import "../assets/main.scss";
 import MainSlider from "../components/main/MainSlider";
 
 const Main = () => {
@@ -58,6 +56,10 @@ const Main = () => {
     dispatch(fetchDiscountedProducts());
     dispatch(fetchBanners());
   }, [products]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
 
   return (
     <div className="container mainPage">
@@ -156,7 +158,7 @@ const Main = () => {
         <div className="categories-content">
           <div className="row ">
             {categories.length > 0 &&
-              categories.map((category) => (
+              categories?.map((category) => (
                 <Category category={category} key={category.id} />
               ))}
           </div>

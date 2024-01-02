@@ -27,12 +27,6 @@ const SimilarProducts = () => {
     );
   }, [currentProduct]);
 
-  //   useEffect(() => {
-  //     setProducts();
-  //     // console.log("id", id);
-  //     console.log("products", products);
-  //   }, [id, products]);
-
   return (
     <div className="similarProductsWrapper">
       {similarProducts.length > 0 ? (
